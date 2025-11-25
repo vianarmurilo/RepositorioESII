@@ -1,0 +1,93 @@
+class Personagem:
+    def __init__(self, builder):
+        self.nome = builder.nome
+        self.classe = builder.classe
+        self.nivel = builder.nivel
+        self.vida = builder.vida
+        self.mana = builder.mana
+        self.forca = builder.forca
+        self.agilidade = builder.agilidade
+        self.inteligencia = builder.inteligencia
+        self.defesa = builder.defesa
+        self.especial = builder.especial
+
+    def __str__(self):
+        return (f"Personagem(nome={self.nome}, classe={self.classe}, nivel={self.nivel}, "
+                f"vida={self.vida}, mana={self.mana}, forca={self.forca}, agilidade={self.agilidade}, "
+                f"inteligencia={self.inteligencia}, defesa={self.defesa}, especial={self.especial})")
+
+
+class PersonagemBuilder:
+    def __init__(self):
+        self.nome = None
+        self.classe = None
+        self.nivel = 1
+        self.vida = 100
+        self.mana = 50
+        self.forca = 10
+        self.agilidade = 10
+        self.inteligencia = 10
+        self.defesa = 10
+        self.especial = "Nenhum"
+
+    def set_nome(self, nome):
+        self.nome = nome
+        return me
+
+    def set_classe(self, classe):
+        self.classe = classe
+        return self
+
+    def set_nivel(self, nivel):
+        self.nivel = nivel
+        return self
+
+    def set_vida(self, vida):
+        self.vida = vida
+        return self
+
+    def set_mana(self, mana):
+        self.mana = mana
+        return self
+
+    def set_forca(self, forca):
+        self.forca = forca
+        return self
+
+    def set_agilidade(self, agilidade):
+        self.agilidade = agilidade
+        return self
+
+    def set_inteligencia(self, inteligencia):
+        self.inteligencia = inteligencia
+        return self
+
+    def set_defesa(self, defesa):
+        self.defesa = defesa
+        return self
+
+    def set_especial(self, especial):
+        self.especial = especial
+        return self
+
+    def build(self):
+        return Personagem(self)
+
+
+# Construção simples e legível graças ao Builder
+personagem = (
+    PersonagemBuilder()
+        .set_nome("Arthas")
+        .set_classe("Guerreiro")
+        .set_nivel(10)
+        .set_vida(150)
+        .set_mana(30)
+        .set_forca(20)
+        .set_agilidade(12)
+        .set_inteligencia(5)
+        .set_defesa(18)
+        .set_especial("Golpe Fatal")
+        .build()
+)
+
+print(personagem)
