@@ -25,77 +25,7 @@ O Builder cria um objeto construtor separado, que monta o produto
 passo a passo.
 
 Benefícios: - Código mais legível - Flexibilidade para variações - Menos
-risco de erros
-
-
-
- 4. Exemplo SEM o padrão Builder
-
- javascript
-class Lanche {
-    constructor(pao, carne, queijo, salada, molho, bacon) {
-        this.pao = pao;
-        this.carne = carne;
-        this.queijo = queijo;
-        this.salada = salada;
-        this.molho = molho;
-        this.bacon = bacon;
-    }
-}
-
-const lanche = new Lanche(
-    "Brioche",
-    "Picanha",
-    "Cheddar",
-    "Alface e tomate",
-    "Barbecue",
-    true
-);
-
-console.log(lanche);
-
-
-
-5. Exemplo COM o padrão Builder
-
- javascript
-class Lanche {
-    constructor() {
-        this.pao = "";
-        this.carne = "";
-        this.queijo = "";
-        this.salada = "";
-        this.molho = "";
-        this.bacon = false;
-    }
-}
-
-class LancheBuilder {
-    constructor() {
-        this.lanche = new Lanche();
-    }
-
-    setPao(tipo) { this.lanche.pao = tipo; return this; }
-    setCarne(tipo) { this.lanche.carne = tipo; return this; }
-    setQueijo(tipo) { this.lanche.queijo = tipo; return this; }
-    setSalada(tipo) { this.lanche.salada = tipo; return this; }
-    setMolho(tipo) { this.lanche.molho = tipo; return this; }
-    setBacon(v) { this.lanche.bacon = v; return this; }
-
-    build() { return this.lanche; }
-}
-
-const lanche = new LancheBuilder()
-    .setPao("Australiano")
-    .setCarne("Costela")
-    .setQueijo("Prato")
-    .setSalada("Alface")
-    .setMolho("Maionese")
-    .setBacon(true)
-    .build();
-
-console.log(lanche);
-
+risco de erros.
 
 
 6. Comparativo
@@ -125,10 +55,10 @@ console.log(lanche);
 
 9. Quando usar
 
-Use quando: - Muitos atributos opcionais - Muitas combinações
+Quando: - Muitos atributos opcionais - Muitas combinações
 possíveis - Criação passo a passo
 
-Não use quando: - Objeto tem poucos atributos - Construção simples
+Não usar quando: - Objeto tem poucos atributos - Construção simples
 
 
 10. Conclusão
