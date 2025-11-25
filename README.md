@@ -28,7 +28,7 @@ Benefícios: - Código mais legível - Flexibilidade para variações - Menos
 risco de erros.
 
 
-6. Comparativo
+4. Comparativo
 
   Critério        Sem Builder   Com Builder
   --------------- ------------- --------------
@@ -39,7 +39,7 @@ risco de erros.
 
 
 
-7. Vantagens
+5. Vantagens
 
  Código organizado
  Evita construtores gigantes
@@ -47,13 +47,13 @@ risco de erros.
  Flexível
  Clareza no processo de construção
 
-8. Desvantagens
+6. Desvantagens
 
  Mais código para objetos simples
  Necessita classes extras (Builder + Produto)
 
 
-9. Quando usar
+7. Quando usar
 
 Quando: - Muitos atributos opcionais - Muitas combinações
 possíveis - Criação passo a passo
@@ -61,7 +61,7 @@ possíveis - Criação passo a passo
 Não usar quando: - Objeto tem poucos atributos - Construção simples
 
 
-10. Conclusão
+8. Conclusão
 
 O padrão Builder é ideal para cenários onde é necessário criar objetos
 complexos de forma clara, segura e organizada.
